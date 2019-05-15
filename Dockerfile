@@ -16,6 +16,6 @@ COPY run.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh
 RUN run.sh
   
-COPY docker-entrypoint.sh /usr/bin/
+#COPY docker-entrypoint.sh /usr/bin/
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+#ENTRYPOINT ["docker-entrypoint.sh"]
