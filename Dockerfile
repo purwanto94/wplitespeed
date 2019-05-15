@@ -1,4 +1,4 @@
-FROM phpearth:php:7.3-litespeed
+FROM phpearth/php:7.3-litespeed
 
 MAINTAINER "indowebsite" <purwanto94@gmail.com>
 
