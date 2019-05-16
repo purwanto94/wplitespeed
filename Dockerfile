@@ -15,10 +15,10 @@ RUN apk add --no-cache bash
 RUN apk add php7.3-pdo_mysql php7.3-memcached
 
 # INSTALL WORDPRESS
-COPY run.sh /usr/bin/
-RUN chmod +x /usr/bin/run.sh
-RUN run.sh
+#COPY run.sh /usr/bin/
+#RUN chmod +x /usr/bin/run.sh
+#RUN run.sh
   
-#COPY docker-entrypoint.sh /usr/bin/
+COPY docker-entrypoint.sh /usr/bin/
 
-#ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
