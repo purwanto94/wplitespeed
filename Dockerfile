@@ -8,6 +8,9 @@ ENV container docker
 RUN apk update
 RUN apk upgrade
 
+# INSTALL BASH
+RUN apk add --no-cache bash
+
 # INSTALL PHP 
 RUN apk add php7.3-pdo_mysql php7.3-memcached
 
