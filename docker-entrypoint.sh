@@ -58,7 +58,7 @@ if [[ "$1" == apache2* ]] || [ "$1" == php-fpm ]; then
 		sourceTarArgs=(
 			--create
 			--file -
-			--directory /usr/src/wordpress
+			--directory /var/lib/litespeed/Example/html
 			--owner "$user" --group "$group"
 		)
 		targetTarArgs=(
