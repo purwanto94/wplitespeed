@@ -22,3 +22,5 @@ RUN run.sh
 COPY docker-entrypoint.sh /usr/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["apache2-foreground"]
