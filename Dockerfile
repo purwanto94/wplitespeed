@@ -28,6 +28,11 @@ RUN chown lsadm:lsadm /var/lib/litespeed/conf/vhosts/defdomain/vhconf.conf
 RUN chown lsadm:lsadm /var/lib/litespeed/conf/httpd_config.conf
 RUN chown lsadm:lsadm /usr/local/lsws/admin/conf/admin_config.conf
 
+# MKDIR
+RUN mkdir /home/defdomain
+RUN mkdir /home/defdomain/html
+RUN mkdir /home/defdomain/logs
+
 # INSTALL WORDPRESS
 COPY run.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh
