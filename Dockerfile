@@ -14,6 +14,11 @@ RUN apk add --no-cache bash
 # INSTALL PHP 
 RUN apk add php7.3-pdo_mysql php7.3-memcached nano wget
 
+# MKDIR
+RUN mkdir /home/defdomain
+RUN mkdir /home/defdomain/html
+RUN mkdir /home/defdomain/logs
+
 # SETTING
 RUN mv -f /var/lib/litespeed/conf/vhosts/Example/ /var/lib/litespeed/conf/vhosts/defdomain/
 RUN rm -f /var/lib/litespeed/conf/vhosts/defdomain/vhconf.conf
@@ -28,15 +33,14 @@ RUN chown lsadm:lsadm /var/lib/litespeed/conf/vhosts/defdomain/vhconf.conf
 RUN chown lsadm:lsadm /var/lib/litespeed/conf/httpd_config.conf
 RUN chown lsadm:lsadm /usr/local/lsws/admin/conf/admin_config.conf
 
-# MKDIR
-RUN mkdir /home/defdomain
-RUN mkdir /home/defdomain/html
-RUN mkdir /home/defdomain/logs
-
 # INSTALL WORDPRESS
 COPY run.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh
 RUN run.sh
+
+# PORT
+EXPOSE 80
+EXPOSE 7080
   
 COPY docker-entrypoint.sh /usr/bin/
 
