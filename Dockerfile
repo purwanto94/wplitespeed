@@ -42,7 +42,7 @@ RUN run.sh
 EXPOSE 80
 EXPOSE 7080
   
-COPY docker-entrypoint.sh /usr/bin/
+COPY docker-entrypoint.sh /bin/bash/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 
