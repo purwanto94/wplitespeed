@@ -1,4 +1,4 @@
-FROM phpearth/php:7.3-litespeed
+FROM phpearth/php:7.2-litespeed
 
 MAINTAINER "indowebsite" <purwanto94@gmail.com>
 
@@ -12,7 +12,7 @@ RUN apk upgrade
 RUN apk add --no-cache bash
 
 # INSTALL PHP 
-RUN apk add php7.3-pdo_mysql php7.3-memcached nano wget
+RUN apk add php7.2-pdo_mysql php7.2-memcached nano wget
 
 # SETTING
 RUN rm -f /var/lib/litespeed/conf/vhosts/Example/vhconf.conf
